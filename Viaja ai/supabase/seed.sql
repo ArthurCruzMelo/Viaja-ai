@@ -1,0 +1,102 @@
+-- Viaja AI - Sample Seed Data
+-- Run after schema.sql to populate with example experiences
+
+INSERT INTO experiences (city, title, description, category, neighborhood, price_level, best_time, local_tip, submitted_by, tags, authenticity_score, upvotes) VALUES
+(
+  'Belo Horizonte',
+  'Hidden rooftop bar in Santa Tereza',
+  'Small rooftop bar with live samba and amazing city views. The vibe is intimate and the caipirinhas are made with fresh fruit. Perfect for sunset.',
+  'Bars',
+  'Santa Tereza',
+  '$$',
+  'Sunset (6-8pm)',
+  'Arrive before 7pm to get a table. Wednesdays have the best live samba.',
+  'BH_local',
+  ARRAY['nightlife', 'hidden gem', 'culture'],
+  9,
+  12
+),
+(
+  'Belo Horizonte',
+  'Feira Hippie de Belo Horizonte',
+  'The largest open-air craft market in Latin America. Hundreds of stalls with handmade crafts, clothes, and street food. A Sunday tradition since 1969.',
+  'Culture',
+  'Centro',
+  '$',
+  'Sunday mornings (8am-2pm)',
+  'Go early to avoid crowds. Try the pastel de queijo from the stalls near the fountain.',
+  'Minas_Lover',
+  ARRAY['culture', 'food', 'hidden gem'],
+  10,
+  45
+),
+(
+  'Lisbon',
+  'Secret viewpoint in Graça',
+  'A tucked-away miradouro that most tourists never find. Bring a bottle of wine and watch the sunset over the Tejo. Best kept secret of the neighborhood.',
+  'Nature',
+  'Graça',
+  '$',
+  'Sunset',
+  'Enter through the small gate next to the church. No signs – that''s how you know it''s real.',
+  'Lisboeta',
+  ARRAY['nature', 'hidden gem', 'culture'],
+  9,
+  28
+),
+(
+  'Lisbon',
+  'Tasca do Chico - Fado vadio',
+  'Authentic fado house where locals sing. No stage, no performances – just spontaneous fado. The walls are covered with photos of famous visitors.',
+  'Culture',
+  'Bairro Alto',
+  '$$',
+  'Tuesday and Thursday nights',
+  'Get there by 9pm. Order the queijo da serra. Don''t talk during the songs.',
+  'Fado_Fan',
+  ARRAY['culture', 'nightlife', 'food'],
+  10,
+  67
+),
+(
+  'Tokyo',
+  'Yanaka Ginza shopping street',
+  'Old Tokyo neighborhood that survived the war. Narrow shopping street with traditional shops, cat cafes, and street food. Feels like stepping back in time.',
+  'Culture',
+  'Yanaka',
+  '$',
+  'Weekday mornings',
+  'Skip the main street crowds. The side alleys have the best dango and ningyo-yaki.',
+  'Tokyo_Native',
+  ARRAY['culture', 'food', 'hidden gem'],
+  9,
+  89
+),
+(
+  'Tokyo',
+  'Golden Gai after midnight',
+  'Tiny bars in Shinjuku, each seating 6-8 people. Each bar has its own character. The real experience starts after the tourist bars close.',
+  'Bars',
+  'Shinjuku',
+  '$$$',
+  'After midnight',
+  'Some bars are for regulars only. Look for "welcome" signs. Cover charge is normal.',
+  'Shinjuku_Insider',
+  ARRAY['nightlife', 'hidden gem', 'culture'],
+  8,
+  112
+),
+(
+  'Belo Horizonte',
+  'Mercado Central - Comida mineira',
+  'Historic market with dozens of food stalls. Try tutu, feijão tropeiro, and queijo minas. The atmosphere is pure Minas Gerais.',
+  'Food',
+  'Centro',
+  '$$',
+  'Lunch (11am-2pm)',
+  'Go to Dona Lucinha''s stall for the best feijão tropeiro. Cash only in most stalls.',
+  'BH_Foodie',
+  ARRAY['food', 'culture'],
+  10,
+  34
+);
