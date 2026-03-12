@@ -1,9 +1,14 @@
 import OpenAI from "openai";
 import type { AIEnhancedExperience } from "@/lib/types";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+function getOpenAIClient() {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw new Error("OPENAI_API_KEY is not configured");
+  }
+
+  return new OpenAI({ apiKey });
+}
 
 export async function enhanceExperienceWithAI(
   title: string,
@@ -26,6 +31,8 @@ Your task:
 Respond with valid JSON only, no markdown:
 {"improved_description": "...", "tags": ["tag1", "tag2", "tag3"], "authenticity_score": 8}`;
 
+  const openai = getOpenAIClient();
+
   const completion = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [
@@ -46,7 +53,6 @@ Respond with valid JSON only, no markdown:
 
   try {
     const parsed = JSON.parse(content) as AIEnhancedExperience;
-    // Validate and clamp authenticity score
     parsed.authenticity_score = Math.min(
       10,
       Math.max(1, Math.round(parsed.authenticity_score))
